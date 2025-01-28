@@ -19,138 +19,11 @@
 	<link href="css/tiny-slider.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<title>Shejama Group</title>
-
-	<!-- Custom CSS for Dropdown -->
-	<style>
-		/* Dropdown Submenu CSS */
-		/* Dropdown Submenu CSS */
-		.dropdown-submenu {
-			position: relative;
-		}
-
-		.dropdown-submenu .dropdown-menu {
-			top: 0;
-			left: 100%;  /* Position submenu to the right of the parent item */
-			margin-top: -6px;
-			display: none;  /* Initially hide the submenu */
-			z-index: 9999;
-		}
-
-		.dropdown-submenu:hover .dropdown-menu {
-			display: block;  /* Display the submenu on hover */
-		}
-
-		/* Ensure text color for all dropdown items */
-		.nav-item .dropdown-item,
-		.nav-item .dropdown-toggle {
-			color: #000 !important;  /* Set the text color to black */
-		}
-
-		/* Ensure text color for submenu items */
-		.dropdown-submenu .dropdown-menu .dropdown-item {
-			color: #000 !important;  /* Set text color for submenu items */
-		}
-
-		/* Hover effect for better user experience */
-		.nav-item .dropdown-item:hover,
-		.dropdown-submenu .dropdown-menu .dropdown-item:hover {
-			background-color: #f8f9fa; /* Light background on hover */
-			color: #000 !important;  /* Ensure text stays black when hovered */
-		}
-
-	</style>
-
-
 </head>
 
 <body>
 <!-- Start Header/Navigation -->
-<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
-	<div class="container">
-		<a class="navbar-brand" href="index.html">Shejama Group<span>.</span></a>
-
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarsFurni">
-			<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="index.html">Home</a>
-				</li>
-
-				<!-- Shop Dropdown with Submenus -->
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Shop
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="shopDropdown">
-						<!-- Home Furniture Dropdown -->
-						<li class="dropdown-submenu">
-							<a class="dropdown-item dropdown-toggle" href="homeFurniture.html">Home Furniture</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Bedroom</a></li>
-								<li><a class="dropdown-item" href="#">Dining</a></li>
-								<li><a class="dropdown-item" href="#">Kitchen</a></li>
-							</ul>
-						</li>
-
-						<!-- Kids Furniture Dropdown -->
-						<li class="dropdown-submenu">
-							<a class="dropdown-item dropdown-toggle" href="KidsFurniture.html">Kids Furniture</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Cots</a></li>
-								<li><a class="dropdown-item" href="#">Tables</a></li>
-								<li><a class="dropdown-item" href="#">Mirrors</a></li>
-							</ul>
-						</li>
-
-						<!-- Office Furniture Dropdown -->
-						<li class="dropdown-submenu">
-							<a class="dropdown-item dropdown-toggle" href="#">Office Furniture</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Workstations</a></li>
-								<li><a class="dropdown-item" href="#">Meeting Rooms</a></li>
-								<li><a class="dropdown-item" href="#">Reception</a></li>
-							</ul>
-						</li>
-
-						<!-- Hotel Furniture Dropdown -->
-						<li class="dropdown-submenu">
-							<a class="dropdown-item dropdown-toggle" href="#">Hotel Furniture</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Lobby</a></li>
-								<li><a class="dropdown-item" href="#">Guest Rooms</a></li>
-								<li><a class="dropdown-item" href="#">Restaurant</a></li>
-							</ul>
-						</li>
-
-						<!-- Restaurant Furniture Dropdown -->
-						<li class="dropdown-submenu">
-							<a class="dropdown-item dropdown-toggle" href="#">Restaurant Furniture</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Bar stools</a></li>
-								<li><a class="dropdown-item" href="#">Dining tables</a></li>
-								<li><a class="dropdown-item" href="#">Kitchen</a></li>
-							</ul>
-						</li>
-
-
-					</ul>
-				</li>
-
-				<li><a class="nav-link" href="about.html">About us</a></li>
-				<li><a class="nav-link" href="services.html">Services</a></li>
-				<li><a class="nav-link" href="contact.html">Contact us</a></li>
-			</ul>
-
-			<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-				<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-				<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<div id="navbar"></div>
 <!-- End Header/Navigation -->
 
 <!--&lt;!&ndash; Start Hero Section &ndash;&gt;-->
@@ -371,91 +244,7 @@
 <!-- End We Help Section -->
 
 <!-- Start Footer Section -->
-<footer class="footer-section">
-	<div class="container relative">
-
-		<div class="sofa-img">
-			<img src="images/sofa.png" alt="Image" class="img-fluid">
-		</div>
-
-		<div class="row">
-			<div class="col-lg-8">
-				<div class="subscription-form">
-					<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
-
-					<form action="#" class="row g-3">
-						<div class="col-auto">
-							<input type="text" class="form-control" placeholder="Enter your name">
-						</div>
-						<div class="col-auto">
-							<input type="email" class="form-control" placeholder="Enter your email">
-						</div>
-						<div class="col-auto">
-							<button class="btn btn-primary">
-								<span class="fa fa-paper-plane"></span>
-							</button>
-						</div>
-					</form>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="row g-5 mb-5">
-			<div class="col-lg-4">
-				<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Shejama Groups<span>.</span></a></div>
-				<p class="mb-4">Discover quality furnishings at our inviting shop.
-					From modern sofas to classic tables, find the perfect pieces for your home.</p>
-
-				<ul class="list-unstyled custom-social">
-					<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-					<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-				</ul>
-			</div>
-
-			<div class="col-lg-8">
-				<div class="row links-wrap">
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Support</a></li>
-							<li><a href="#">Knowledge base</a></li>
-							<li><a href="#">Live chat</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Our team</a></li>
-							<li><a href="#">Leadership</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-
-					<div class="col-6 col-sm-6 col-md-3">
-						<ul class="list-unstyled">
-							<li><a href="#">Terms of Service</a></li>
-							<li><a href="#">Shipping & Returns</a></li>
-							<li><a href="#">Tracking</a></li>
-							<li><a href="#">Order history</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-</footer>
+<div id="footer"></div>
 <!-- End Footer Section -->
 
 <script>
@@ -555,5 +344,6 @@
 			})
 			.catch(error => console.error('Error fetching items:', error));
 </script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
