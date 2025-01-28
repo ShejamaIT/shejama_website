@@ -209,8 +209,6 @@ a {
 /*  display: block; !* Show submenu on hover *!*/
 /*}*/
 
-/* Dropdown Submenu CSS */
-/* Dropdown Submenu CSS */
 .dropdown-submenu {
   position: relative;
 }
@@ -243,6 +241,23 @@ a {
 .dropdown-submenu .dropdown-menu .dropdown-item:hover {
   background-color: #f8f9fa; /* Light background on hover */
   color: #000 !important;  /* Ensure text stays black when hovered */
+}
+.hero .hero-image img {
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.product-item img {
+  max-width: 100%;
+  /*height: auto;*/
+  border-radius: 8px;
+}
+
+.product-item h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: 15px;
 }
 
 .hero {
