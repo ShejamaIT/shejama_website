@@ -248,9 +248,10 @@ a {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 .product-item img {
-  max-width: 100%;
-  /*height: auto;*/
-  border-radius: 8px;
+  width: 100%; /* Ensures the image fills the width of the container */
+  height: 200px; /* Fixed height for consistent size */
+  object-fit: cover; /* Ensures the image is cropped proportionally without stretching */
+  border-radius: 8px; /* Keeps the rounded corners */
 }
 
 .product-item h5 {
@@ -258,7 +259,9 @@ a {
   font-weight: 500;
   color: #333;
   margin-top: 15px;
+  text-align: center;
 }
+
 
 .hero {
   background: #3b5d50;
