@@ -42,11 +42,12 @@ router.post("/category", async (req, res) => {
 });
 // Save New Type
 router.post("/type", async (req, res) => {
-    const sql = `INSERT INTO type (Ty_Id,Ca_Id,sub_cag) VALUES (?, ?,?)`;
+    const sql = `INSERT INTO type (Ty_Id,Ca_Id,sub_cag,oter_cag) VALUES (?, ?,?,?)`;
     const values = [
         req.body.Ty_Id,
         req.body.Ca_Id,
         req.body.sub_cag,
+        req.body.oter_cag
     ];
     try {
         // Execute the query and retrieve the result
@@ -59,7 +60,8 @@ router.post("/type", async (req, res) => {
             data: {
                 Ty_Id : req.body. Ty_Id,
                 Ca_Id: req.body.Ca_Id,
-                sub_cag: req.body.sub_cag
+                sub_cag: req.body.sub_cag,
+                oter_cag: req.body.oter_cag
             },
         });
     } catch (err) {
@@ -333,6 +335,50 @@ router.post("/custsignin", async (req, res) => {
         });
     }
 });
+
+// Get random 3 items
+router.get("/get-items-by-type", async (req, res) => {
+    try {
+        // Extract sub_cag and oter_cag from request query parameters
+        const { sub_cag, oter_cag } = req.query;
+
+        if (!sub_cag || !oter_cag) {
+            return res.status(400).json({ message: "sub_cag and oter_cag are required" });
+        }
+
+        // SQL query to fetch items based on the type criteria
+        const query = `
+            SELECT Item.*
+            FROM Item
+            INNER JOIN Type ON Item.Ty_id = Type.Ty_Id
+            WHERE Type.sub_cag = ? AND Type.oter_cag = ?
+        `;
+
+        // Execute the query
+        const [items] = await db.query(query, [sub_cag, oter_cag]);
+
+        if (items.length === 0) {
+            return res.status(404).json({ message: "No items found for the given type" });
+        }
+
+        // Format items to include Base64-encoded image
+        const formattedItems = items.map(item => ({
+            I_Id: item.I_Id,
+            I_name: item.I_name,
+            Ty_id: item.Ty_id,
+            descrip: item.descrip,
+            price: item.price,
+            qty: item.qty,
+            img: `data:image/png;base64,${item.img.toString("base64")}`, // Convert LONGBLOB to Base64
+        }));
+
+        return res.status(200).json(formattedItems);
+    } catch (error) {
+        console.error("Error fetching items by type:", error.message);
+        return res.status(500).json({ message: "Error fetching items" });
+    }
+});
+
 
 
 
