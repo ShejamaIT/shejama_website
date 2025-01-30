@@ -60,11 +60,13 @@
 <script>
     async function fetchItems() {
         try {
-            // Example category (You can dynamically get this from URL or user input)
+            // Example category values (You can dynamically get these from URL or user input)
+            const categoryName = "Home Furniture";  // Update dynamically if needed
             const subCag = "Living Room Furniture";
-            const oterCag = "full cushion sofa";
+            const oterCag = "Full cushion";
 
-            const response = await fetch(`http://localhost:5000/api/admin/get-items-by-type?sub_cag=${encodeURIComponent(subCag)}&oter_cag=${encodeURIComponent(oterCag)}`);
+            // Fetch items from the updated API
+            const response = await fetch(`http://localhost:5000/api/admin/get-items-by-type?category_name=${encodeURIComponent(categoryName)}&sub_cag=${encodeURIComponent(subCag)}&oter_cag=${encodeURIComponent(oterCag)}`);
 
             if (!response.ok) {
                 throw new Error("Failed to fetch items");
@@ -98,7 +100,7 @@
 
         } catch (error) {
             console.error("Error fetching items:", error);
-            document.getElementById("product-list").innerHTML = "<p class='text-center text-danger'>Error loading products</p>";
+            document.getElementById("product-list").innerHTML = "<p class='text-center text-info'>Empty...</p>";
         }
     }
 
@@ -121,6 +123,7 @@
     // Fetch items when the page loads
     document.addEventListener("DOMContentLoaded", fetchItems);
 </script>
+
 <script src="js/scripts.js"></script>
 </body>
 
